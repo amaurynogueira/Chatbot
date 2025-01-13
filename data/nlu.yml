@@ -1,0 +1,264 @@
+# O arquivo 'nlu.yml' é usado para definir os dados de treinamento de NLU (Natural Language Understanding) de um chatbot desenvolvido com o framework Rasa.
+# Ele especifica as intenções (intents) que o chatbot deve reconhecer nas mensagens dos usuários e fornece exemplos de frases para cada intenção.
+# Esses exemplos ajudam o modelo de NLU a aprender a identificar corretamente as intenções dos usuários com base nas suas mensagens.
+
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Olá
+    - Oi
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+    - Tudo bem?
+    - Como vai você?
+    - E aí, tudo certo?
+    - E aí
+    - Opa
+    - Fala, beleza?
+    - Boa, como tá?
+    - Ei, como estão as coisas?
+    - Saudações!
+    - Olá, como posso falar com você?
+    - Oie, tudo tranquilo?
+    - Como andam as coisas?
+    - Como você está?
+    - Beleza?
+    - Tudo na paz?
+
+- intent: goodbye
+  examples: |
+    - Tchau
+    - Até logo
+    - Obrigado, tchau
+    - Valeu, até mais
+    - Falou
+    - Tenha um bom dia
+    - Nos falamos depois
+    - Adeus
+    - Vou nessa
+    - Vou embora agora
+    - Vou me despedir
+    - É isso, tchau
+    - Beleza, até
+    - Certo, flw
+    - Fui
+
+- intent: affirm
+  examples: |
+    - Sim
+    - Claro
+    - Com certeza
+    - Perfeito
+    - Certo
+    - Concordo
+    - Pode ser
+    - Sim, sim
+    - Exatamente
+    - Pois é
+    - Tá bom
+    - Isso mesmo
+    - É verdade
+    - Ok, tudo bem
+    - Fechado
+
+- intent: deny
+  examples: |
+    - Não
+    - De jeito nenhum
+    - Acho que não
+    - Negativo
+    - Prefiro que não
+    - Nananinanão
+    - De forma alguma
+    - Não concordo
+    - Nem pensar
+    - Não pode ser
+    - Tá louco?
+    - Nem ferrando
+    - Não rola
+    - Não, obrigado
+    - Acho que não é isso
+
+- intent: mood_unhappy
+  examples: |
+    - Estou triste
+    - Estou desanimado
+    - Não estou bem
+    - Isso não me ajudou
+    - Não gostei disso
+    - Estou chateado
+    - Me sinto péssimo
+    - Estou irritado
+    - Não está nada bom
+    - Parece que nada funciona
+    - Estou pra baixo
+    - Estou de mau humor
+    - Não estou no meu melhor dia
+    - Isso foi pior do que eu esperava
+    - Nada está dando certo
+
+- intent: mood_happy
+  examples: |
+    - Estou muito feliz
+    - Que boa notícia
+    - Isso foi ótimo
+    - Que maravilha!
+    - Estou de ótimo humor
+    - Isso me deixa contente
+    - Estou empolgado
+    - Estou radiante
+    - Me sinto incrível
+    - Adorei essa informação
+    - Estou alegre
+    - Que notícia espetacular
+    - Beleza, adorei!
+    - Isso animou meu dia
+    - Estou super bem agora
+    - Estou ótimo
+    - Isso foi perfeito
+    - Estou satisfeito
+    - Adorei isso!
+    - Estou feliz da vida
+    - Isso foi excelente
+    - Tudo está perfeito
+    - Me sinto muito bem
+    - Estou muito animado
+    - Estou no meu melhor dia
+    - Minha vida está ótima
+    - Me sinto empolgado
+    - Hoje está incrível
+
+- intent: bot_challenge
+  examples: |
+    - Quem é você?
+    - Você é um robô?
+    - Você é humano?
+    - Você é real?
+    - Quem criou você?
+    - Qual a sua função?
+    - Você tem emoções?
+    - Como você foi desenvolvido?
+    - Como você funciona?
+    - Está vivo?
+    - É inteligente de verdade?
+    - Você fala que linguagem?
+    - Você aprende com as conversas?
+    - Você é uma inteligência artificial?
+    - Quem te programou?
+
+- intent: ask_payment_methods
+  examples: |
+    - Como posso pagar?
+    - Quais formas de pagamento vocês aceitam?
+    - Posso pagar com cartão de crédito?
+    - Vocês aceitam Pix?
+    - Quais são os métodos de pagamento?
+    - Dá pra pagar com dinheiro?
+    - Vocês aceitam transferência bancária?
+    - É possível pagar com boleto?
+    - Aceitam cartão de débito?
+    - Eu consigo pagar via depósito?
+    - Vocês trabalham com PayPal?
+    - Quais opções de pagamento tenho?
+    - Como faço para pagar?
+    - Tem como parcelar?
+    - É permitido pagar por aproximação?
+    - Consigo pagar pelo celular?
+    - Vocês dão desconto no Pix?
+    - Posso pagar metade agora e metade depois?
+    - Aceitam pagamentos online?
+    - Gostaria de saber todas as formas de pagamento
+    - E se eu quiser pagar em dinheiro vivo?
+    - Vocês aceitam Bitcoin?
+    - Qual a forma mais rápida de pagar?
+    - Existe alguma taxa extra em cartão?
+    - Posso pagar com Nubank?
+    - Funcionam com QR code?
+
+- intent: thankyou
+  examples: |
+    - Obrigado
+    - Valeu
+    - Muito obrigado
+    - Agradeço
+    - Gratidão
+    - Te agradeço
+    - Obrigado pela ajuda
+    - Obrigadão
+    - Valeu mesmo
+    - Foi de grande ajuda
+    - Você me ajudou demais
+    - Obrigado por tudo
+    - Brigadão
+    - Muito grato
+    - Vlw
+
+- intent: cheer_up
+  examples: |
+    - Preciso de um incentivo/stop
+    - Tô precisando de palavras de motivação
+    - Tô meio pra baixo
+    - Me dê uma palavra amiga
+    - Me ajuda a ficar melhor
+    - Preciso de algo pra me animar
+    - Estou precisando de força
+    - Estou sem ânimo
+    - Tô cabisbaixo
+    - Quem pode me animar?
+    - Me sinto desmotivado
+    - Vê se me anima aí
+    - Preciso de inspiração
+
+- intent: did_that_help
+  examples: |
+    - Isso é tudo que preciso saber?
+    - Isso resolve minha dúvida?
+    - Foi suficiente?
+    - Entendi, mas preciso de mais informações
+    - Pode explicar mais?
+    - Não estou certo se entendi completamente
+    - Isso faz sentido?
+    - Preciso de mais detalhes
+    - Você pode esclarecer melhor?
+    - Ainda estou confuso
+    - Pode repetir?
+    - Não ficou claro pra mim
+
+- intent: ask_hours
+  examples: |
+    - Qual é o horário de funcionamento?
+    - Vocês atendem até que horas?
+    - Qual o horário de atendimento?
+    - Que horas abrem e fecham?
+    - Funcionam aos finais de semana?
+    - Vocês funcionam 24 horas?
+    - Quando vocês abrem?
+    - Podem me dizer o horário de atendimento?
+    - Qual o horário que vocês atendem?
+    - Qual o expediente de vocês?
+    - Qual o horário comercial de vocês?
+    - Até que horas vocês ficam abertos?
+    - Qual a hora de abertura?
+    - Qual o horário limite de funcionamento?
+    - Abrem em feriados também?
+
+- intent: nlu_fallback
+  examples: |
+    - qweqwe
+    - asdasd
+    - dfsfsd
+    - Texto aleatório sem sentido
+    - ???
+    - lkajsd laksdj
+    - qdknqweq qwdwqeq
+    - hdsfuhew 839hjs
+    - Ajskdhjaskdhj
+    - ??? ??? ???
+    - 999 ??? 
+    - as82h asjk
+    - sem pé nem cabeça
+    - yyy bbb jjj
+    - Nonsensical

@@ -1,0 +1,53 @@
+# O arquivo 'config.yml' é usado para configurar o pipeline de processamento de linguagem natural (NLU) e as políticas de um chatbot desenvolvido com o framework Rasa.
+# Ele especifica a versão do Rasa, o idioma do chatbot, os componentes do pipeline de NLU (como tokenizadores, featurizers e classificadores) e as políticas de diálogo.
+# O pipeline de NLU define como as mensagens dos usuários são processadas e interpretadas, enquanto as políticas de diálogo determinam como o chatbot deve responder com base no contexto da conversa.
+
+
+version: "3.1"
+
+language: "pt"
+
+pipeline:
+  # Usa o spaCy para processar texto em português (é preciso instalar "pt_core_news_sm")
+  - name: SpacyNLP
+    model: "pt_core_news_sm"
+
+  - name: SpacyTokenizer
+  - name: SpacyFeaturizer
+  
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+
+  - name: DIETClassifier
+    epochs: 300
+    number_of_transformer_layers: 2
+    hidden_layer_sizes:
+      text: [256, 128]
+
+  - name: EntitySynonymMapper
+
+  - name: ResponseSelector
+    epochs: 300
+
+  - name: FallbackClassifier
+    threshold: 0.3          # Ajuste conforme testes
+    ambiguity_threshold: 0.5
+
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 100
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true
+
+assistant_id: 20250107-202920-isobaric-moat

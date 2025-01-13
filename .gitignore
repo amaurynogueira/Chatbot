@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+
+# Pacotes e Dependências
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Configurações do Sistema
+.DS_Store
+*.swp
+*.swo
+*.bak
+Thumbs.db
+
+# Modelos Treinados
+models/
+
+# Logs e Arquivos Temporários
+logs/
+*.log
+*.tmp
+*.temp
+debug.log
+
+# Dados Gerados pelo Rasa
+.rasa/
+.rasa_cache/
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.iml
+
+# Configurações de Deploy (opcional, dependendo do seu setup)
+*.env
+.envrc
+secrets.json
+config.json
+

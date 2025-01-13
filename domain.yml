@@ -1,0 +1,72 @@
+# O arquivo 'domain.yml' é usado para definir o domínio de um chatbot desenvolvido com o framework Rasa.
+# Ele especifica os intents (intenções), entities (entidades), slots, templates de respostas e ações personalizadas.
+# O domínio é essencial para o funcionamento do chatbot, pois define como ele deve interpretar as mensagens dos usuários
+# e quais respostas ou ações ele deve tomar com base nessas mensagens.
+
+
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - mood_unhappy
+  - mood_happy    # Unificamos `mood_great` e `mood_happy` numa só intenção
+  - thankyou
+  - ask_payment_methods
+  - cheer_up
+  - did_that_help
+  - ask_hours
+
+responses:
+  utter_greet:
+    - text: "Oi! Como posso ajudar você hoje?"
+
+  utter_goodbye:
+    - text: "Até logo! Foi um prazer ajudar você."
+
+  utter_ask_payment_methods:
+    - text: "Aceitamos pagamento via cartão de crédito, Pix e boleto bancário."
+
+  utter_happy:
+    - text: "Que bom saber disso! 😃 Se precisar de algo mais, estou aqui."
+
+  utter_sad:
+    - text: "Sinto muito por ouvir isso. 😔 Estou aqui para ajudar você."
+
+  utter_iamabot:
+    - text: "Sou um assistente virtual aqui para ajudar você!"
+
+  utter_thankyou:
+    - text: "De nada! Estou aqui sempre que precisar."
+
+  utter_cheer_up:
+    - text: "Não desanime! Tudo vai dar certo! 😊"
+
+  utter_did_that_help:
+    - text: "Isso ajudou você? Precisa de mais alguma coisa?"
+
+  utter_ask_hours:
+    - text: "Nosso horário de atendimento é das 8h às 18h, de segunda a sexta."
+
+  utter_fallback:
+    - text: "Desculpe, não entendi. Pode reformular a pergunta?"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_payment_methods
+  - utter_happy
+  - utter_sad
+  - utter_iamabot
+  - utter_thankyou
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_ask_hours
+  - utter_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

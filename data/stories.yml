@@ -1,0 +1,64 @@
+# O arquivo 'stories.yml' é usado para definir as histórias de um chatbot desenvolvido com o framework Rasa.
+# As histórias são sequências de interações entre o usuário e o chatbot que descrevem como o chatbot deve responder
+# a diferentes intenções dos usuários. Cada história é composta por uma série de passos que incluem intents (intenções)
+# e actions (ações) que o chatbot deve executar em resposta a essas intenções.
+
+
+
+version: "3.1"
+
+stories:
+- story: dizer olá
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: perguntar horário de funcionamento
+  steps:
+    - intent: ask_hours
+    - action: utter_ask_hours
+
+- story: perguntar formas de pagamento
+  steps:
+    - intent: ask_payment_methods
+    - action: utter_ask_payment_methods
+
+- story: encerrar conversa
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: desafio do bot
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- story: expressar felicidade
+  steps:
+    - intent: mood_happy
+    - action: utter_happy
+
+- story: expressar tristeza
+  steps:
+    - intent: mood_unhappy
+    - action: utter_sad
+
+- story: agradecer
+  steps:
+    - intent: thankyou
+    - action: utter_thankyou
+
+- story: animar o usuário
+  steps:
+    - intent: cheer_up
+    - action: utter_cheer_up
+
+- story: verificar se a resposta ajudou
+  steps:
+    - intent: did_that_help
+    - action: utter_did_that_help
+
+- story: fallback story
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback

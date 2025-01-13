@@ -1,0 +1,37 @@
+# O arquivo 'rules.yml' é usado para definir as regras de um chatbot desenvolvido com o framework Rasa.
+# As regras são sequências predefinidas de interações entre o usuário e o chatbot que descrevem como o chatbot deve responder
+# a determinadas intenções dos usuários. Cada regra é composta por uma série de passos que incluem intents (intenções)
+# e actions (ações) que o chatbot deve executar em resposta a essas intenções.
+
+version: "3.1"
+
+rules:
+- rule: Responder ao desafio do bot
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- rule: Responder se a resposta ajudou
+  steps:
+    - intent: did_that_help
+    - action: utter_did_that_help
+
+- rule: Responder sobre formas de pagamento
+  steps:
+    - intent: ask_payment_methods
+    - action: utter_ask_payment_methods
+
+- rule: Fallback rule
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback
+
+- rule: Responder afirmativamente
+  steps:
+    - intent: affirm
+    - action: utter_happy
+
+- rule: Responder negativamente
+  steps:
+    - intent: deny
+    - action: utter_sad
